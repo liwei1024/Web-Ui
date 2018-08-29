@@ -148,7 +148,7 @@ jsValue JS_CALL mb_AutoAssemble(jsExecState es)
 			toggle = jsToInt(es, val1);
 		}
 		std::string script(jsToTempString(es, val0));
-		MessageBox(NULL, (char*)script.c_str(),"aa",MB_OK);
+		//MessageBox(NULL, (char*)script.c_str(),"aa",MB_OK);
 		result = autoAssemble(g_hProcess, (char*)script.c_str(), toggle);
 	}
 	return jsBoolean(result);
@@ -190,7 +190,4 @@ VOID jsBindFunctions()
 
 	jsBindFunction("autoAssemble", mb_AutoAssemble, 2);
 	jsBindFunction("getAddress", mb_GetAddress, 1);
-
-
-
 }
